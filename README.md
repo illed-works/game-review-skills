@@ -2,7 +2,7 @@
 
 Claude Code / claude.ai / Codex で使うゲーム企画レビュー用スキル集。
 
-企画書を読ませると、「事業として成立するか」と「規約・権利的に出して大丈夫か」の2つの観点で自動レビューしてくれる。
+企画書を読ませると、「事業として成立するか」と「規約・権利的に出して大丈夫か」の2つの観点で自動レビューしてくれる。企画が固まったら、実装に入るための開発キット一式もこのリポジトリで生成できる。
 
 ---
 
@@ -43,6 +43,19 @@ Claude Code / claude.ai / Codex で使うゲーム企画レビュー用スキル
 
 ---
 
+## 🛠️ game-dev-kit — AIコーディング開発キット生成
+
+企画が固まって実装に入る段階で、Claude Code等がそのまま読み込める開発キット(CLAUDE.md・spec.md)を生成する。非エンジニアのディレクター/プロデューサーが、実装の準備を一人で整えられるようにするためのもの。
+
+**わかること・作れるもの:**
+- 企画・仕様の相談内容を、Claude Codeがそのまま実装に使える形式のドキュメントに変換
+- Sonnetのようなモデルでも安定して回せる粒度・書き方に整理した仕様書
+- 開発を始める前に決めておくべきことの整理
+
+**呼び出し方の例:** 「CLAUDE.md作って」「spec作って」「開発準備して」「プロトタイプ作りたい」「実装の準備をしたい」
+
+---
+
 より詳しいチェック項目の一覧は **[SKILLS-OVERVIEW.md](./SKILLS-OVERVIEW.md)** を参照。
 
 両スキルは姉妹スキルとして設計されており、事業性の穴はgame-biz-review、権利・規約・表現リスクはgame-legal-reviewが担当する。
@@ -55,6 +68,7 @@ git clone https://github.com/poppin-games/game-review-skills.git ~/game-review-s
 mkdir -p ~/.claude/skills
 ln -s ~/game-review-skills/game-biz-review ~/.claude/skills/game-biz-review
 ln -s ~/game-review-skills/game-legal-review ~/.claude/skills/game-legal-review
+ln -s ~/game-review-skills/game-dev-kit ~/.claude/skills/game-dev-kit
 ```
 
 シンボリックリンクにしておくと、`git pull` するだけで全員が最新版を使える。
@@ -64,6 +78,7 @@ Windowsの場合は管理者権限で `mklink /D` を使う:
 ```powershell
 mklink /D "%USERPROFILE%\.claude\skills\game-legal-review" "%USERPROFILE%\game-review-skills\game-legal-review"
 mklink /D "%USERPROFILE%\.claude\skills\game-biz-review" "%USERPROFILE%\game-review-skills\game-biz-review"
+mklink /D "%USERPROFILE%\.claude\skills\game-dev-kit" "%USERPROFILE%\game-review-skills\game-dev-kit"
 ```
 
 ## 導入方法(Codex)
@@ -74,6 +89,7 @@ Codexは `~/.agents/skills/`(または `<リポジトリ>/.agents/skills/`)か�
 mkdir -p ~/.agents/skills
 ln -s ~/game-review-skills/game-biz-review ~/.agents/skills/game-biz-review
 ln -s ~/game-review-skills/game-legal-review ~/.agents/skills/game-legal-review
+ln -s ~/game-review-skills/game-dev-kit ~/.agents/skills/game-dev-kit
 ```
 
 game-legal-reviewはweb検索を前提にした設計のため、Codex側でネットワークアクセス(検索)が有効になっているか確認すること。
