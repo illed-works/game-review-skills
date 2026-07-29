@@ -1,4 +1,4 @@
-# poppin-claude-skills
+# game-review-skills
 
 Claude Code / claude.ai / Codex で使うゲーム企画レビュー用スキル集。
 
@@ -14,11 +14,11 @@ Claude Code / claude.ai / Codex で使うゲーム企画レビュー用スキル
 ## 導入方法(Claude Code)
 
 ```bash
-git clone https://github.com/poppin-games/poppin-claude-skills.git ~/poppin-claude-skills
+git clone https://github.com/<Organization or Owner>/game-review-skills.git ~/game-review-skills
 
 mkdir -p ~/.claude/skills
-ln -s ~/poppin-claude-skills/game-biz-review ~/.claude/skills/game-biz-review
-ln -s ~/poppin-claude-skills/game-legal-review ~/.claude/skills/game-legal-review
+ln -s ~/game-review-skills/game-biz-review ~/.claude/skills/game-biz-review
+ln -s ~/game-review-skills/game-legal-review ~/.claude/skills/game-legal-review
 ```
 
 シンボリックリンクにしておくと、`git pull` するだけで全員が最新版を使える。
@@ -26,8 +26,8 @@ ln -s ~/poppin-claude-skills/game-legal-review ~/.claude/skills/game-legal-revie
 Windowsの場合は管理者権限で `mklink /D` を使う:
 
 ```powershell
-mklink /D "%USERPROFILE%\.claude\skills\game-legal-review" "%USERPROFILE%\poppin-claude-skills\game-legal-review"
-mklink /D "%USERPROFILE%\.claude\skills\game-biz-review" "%USERPROFILE%\poppin-claude-skills\game-biz-review"
+mklink /D "%USERPROFILE%\.claude\skills\game-legal-review" "%USERPROFILE%\game-review-skills\game-legal-review"
+mklink /D "%USERPROFILE%\.claude\skills\game-biz-review" "%USERPROFILE%\game-review-skills\game-biz-review"
 ```
 
 ## 導入方法(Codex)
@@ -36,8 +36,8 @@ Codexは `~/.agents/skills/`(または `<リポジトリ>/.agents/skills/`)か�
 
 ```bash
 mkdir -p ~/.agents/skills
-ln -s ~/poppin-claude-skills/game-biz-review ~/.agents/skills/game-biz-review
-ln -s ~/poppin-claude-skills/game-legal-review ~/.agents/skills/game-legal-review
+ln -s ~/game-review-skills/game-biz-review ~/.agents/skills/game-biz-review
+ln -s ~/game-review-skills/game-legal-review ~/.agents/skills/game-legal-review
 ```
 
 game-legal-reviewはweb検索を前提にした設計のため、Codex側でネットワークアクセス(検索)が有効になっているか確認すること。
