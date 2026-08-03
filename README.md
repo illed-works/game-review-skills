@@ -4,6 +4,8 @@ Claude Code / claude.ai / Codex で使うゲーム企画レビュー用スキル
 
 企画書を読ませると、「事業として成立するか」と「規約・権利的に出して大丈夫か」の2つの観点で自動レビューしてくれる。企画が固まったら、実装に入るための開発キット一式もこのリポジトリで生成できる。
 
+会社の企画書でも、個人制作・同人・インディーの企画でも使える。企画の規模に合わせて、該当しない観点(権利元との交渉など)はスキップされる。
+
 ---
 
 ## 📊 game-biz-review — 事業性レビュー
@@ -63,7 +65,7 @@ Claude Code / claude.ai / Codex で使うゲーム企画レビュー用スキル
 ## 導入方法(Claude Code)
 
 ```bash
-git clone https://github.com/poppin-games/game-review-skills.git ~/game-review-skills
+git clone https://github.com/<your-account>/game-review-skills.git ~/game-review-skills
 
 mkdir -p ~/.claude/skills
 ln -s ~/game-review-skills/game-biz-review ~/.claude/skills/game-biz-review
