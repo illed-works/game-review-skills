@@ -66,7 +66,7 @@ Claude Code / claude.ai / Codex で使うゲーム企画レビュー用スキル
 ## 導入方法(Claude Code)
 
 ```bash
-git clone https://github.com/<your-account>/game-review-skills.git ~/game-review-skills
+git clone https://github.com/illed-works/game-review-skills.git ~/game-review-skills
 
 mkdir -p ~/.claude/skills
 ln -s ~/game-review-skills/game-biz-review ~/.claude/skills/game-biz-review
