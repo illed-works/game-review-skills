@@ -1,5 +1,21 @@
 # game-review-skills
 
+## English
+
+**game-review-skills** is a set of Claude/Codex agent skills that take a game idea all the way from a rough flash of inspiration to implementation-ready docs:
+
+- 💡 **game-pitch-kit** — Give it a rough idea. It researches competitors and prior art on the web, then gives an honest go/no-go verdict — **if the idea looks doomed, it says so before writing anything.** If it's promising, it asks the minimum necessary questions and drafts a proposal where every item is labeled *decided by you / assumed by AI / undecided*.
+- 📊 **game-biz-review** — Reviews a proposal for business viability: fuzzy goals that need real numbers, live-ops sustainability, content burn-out, exit criteria, lessons from failed games in the same genre. It is designed **not** to flatter and **not** to dress up a doomed plan.
+- ⚖️ **game-legal-review** — Reviews proposals, specs, and scenarios for platform-policy risks (Steam / App Store / Google Play), trademark collisions, game-mechanic patents, regulations (Japan + GDPR / loot-box laws / minor protection), cultural taboos, and age-rating (CERO / IARC) issues. First-pass screening only — not a substitute for a lawyer.
+- 🛠️ **game-dev-kit** — Once a plan is set, generates CLAUDE.md + spec.md so non-engineers can direct AI coding tools reliably. Includes tech-stack and server/infrastructure selection guidance when nothing is decided yet.
+
+The skill bodies are currently written in Japanese, but **they work in any language** — each skill is instructed to always respond in the user's language. Install them the same way as described below (clone + symlink into `~/.claude/skills/` or `~/.agents/skills/`). Japan-specific legal content is modular and only applied when your target market makes it relevant.
+
+Everything here is MIT-licensed and provided as-is; see the Disclaimer section. Contributions and translations welcome.
+
+---
+
+
 Claude Code / claude.ai / Codex で使うゲーム企画レビュー用スキル集。
 
 思いつき段階のアイデアは、調査と判定を経て企画書に立ち上げられる(game-pitch-kit)。できた企画書は「事業として成立するか」(game-biz-review)と「規約・権利的に出して大丈夫か」(game-legal-review)の2つの観点で自動レビュー。企画が固まったら、実装に入るための開発キット一式も生成できる(game-dev-kit)。アイデア→企画書→レビュー→実装準備まで一気通貫。

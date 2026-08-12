@@ -1,9 +1,16 @@
 ---
 name: game-legal-review
-description: ゲームやアプリの企画書・仕様書・シナリオを「プラットフォーム規約・商標・他社特許・法規制・表現タブーに抵触しないか」の観点でレビューするスキル。Steam/App Store/Google Play/Webの規約リスク、タイトルや用語の商標リスク、ゲームメカニクス特許リスク、日本の規制(景品表示法・資金決済法・賭博罪・風営法等)、海外規制(GDPR等プライバシー法・各国のルートボックス規制・未成年保護)、差別表現・宗教的タブー・各国の表現規制・名称が外国語で卑猥やスラングになる問題、さらにシナリオや台詞の描写がCERO/IARC等の年齢レーティングや炎上リスクに触れないかまでチェックし、重大度付きのリスクレポートを出す。「規約に引っかからない?」「商標大丈夫?」「特許チェックして」「権利まわり見て」「この名前ヤバくない?」「海外で問題ない?」「炎上リスク見て」「このシナリオ問題ない?」「CERO的に大丈夫?」「レーティング見て」「リリースして問題ない?」「法務レビュー」「コンプライアンスチェック」等の依頼があったら必ずこのスキルを使うこと。企画書・仕様書・シナリオテキストとともに権利・規約・表現の確認を求められた時点で参照する。事業性のレビューはgame-biz-review、こちらは権利・規制・表現リスク専門。
+description: ゲームやアプリの企画書・仕様書・シナリオを「プラットフォーム規約・商標・他社特許・法規制・表現タブーに抵触しないか」の観点でレビューするスキル。Steam/App Store/Google Play/Webの規約リスク、タイトルや用語の商標リスク、ゲームメカニクス特許リスク、日本の規制(景品表示法・資金決済法・賭博罪・風営法等)、海外規制(GDPR等プライバシー法・各国のルートボックス規制・未成年保護)、差別表現・宗教的タブー・各国の表現規制・名称が外国語で卑猥やスラングになる問題、さらにシナリオや台詞の描写がCERO/IARC等の年齢レーティングや炎上リスクに触れないかまでチェックし、重大度付きのリスクレポートを出す。「規約に引っかからない?」「商標大丈夫?」「特許チェックして」「権利まわり見て」「この名前ヤバくない?」「海外で問題ない?」「炎上リスク見て」「このシナリオ問題ない?」「CERO的に大丈夫?」「レーティング見て」「リリースして問題ない?」「法務レビュー」「コンプライアンスチェック」等の依頼があったら必ずこのスキルを使うこと。企画書・仕様書・シナリオテキストとともに権利・規約・表現の確認を求められた時点で参照する。事業性のレビューはgame-biz-review、こちらは権利・規制・表現リスク専門。 | English: Use this skill whenever the user asks whether a game/app proposal, spec, or scenario could violate platform policies, trademarks, third-party patents, regulations, or content taboos — e.g. "is this name safe", "will this pass Steam/App Store review", "trademark check", "legal review", "is this okay for ratings (CERO/ESRB/PEGI)". Outputs a severity-ranked risk report. Not a substitute for a lawyer.
 ---
 
 # game-legal-review: ゲーム企画の権利・規約リスクレビュー
+
+## 言語 / Language
+
+この指示書は日本語で書かれているが、あらゆる言語のユーザーに適用する。**出力(質問・判定・レポート・ドラフト)は必ずユーザーの使用言語で行うこと。** 日本固有の内容(日本の法規制など)は、ユーザーの展開市場・状況に関係する場合のみ適用する。
+
+This skill's instructions are written in Japanese, but they apply to users of any language. **Always respond — questions, verdicts, reports, drafts — in the user's language.** Japan-specific content (e.g. Japanese regulations) applies only when relevant to the user's target market.
+
 
 ## このスキルの目的と限界
 

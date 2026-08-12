@@ -1,9 +1,16 @@
 ---
 name: game-pitch-kit
-description: 思いつき段階のゲーム・アプリのアイデア(フラッシュアイデア)を受け取り、競合・既出・市場性をweb調査した上で「進める価値があるか」を正直に判定し、有望なら質問を経て企画書ドラフトまで仕上げるスキル。「このアイデアどう思う」「思いつきなんだけど」「こういうゲームってアリかな」「企画書にして」「企画にできそうか調べて」「壁打ちして」「アイデア出したから調べて」等の依頼があったら必ずこのスキルを使うこと。断片的なアイデアから企画書への立ち上げが話題になった時点で参照する。完成した企画書のレビューはgame-biz-review(事業性)とgame-legal-review(権利・規約)、実装準備はgame-dev-kitが担当し、このスキルはその上流(アイデア→企画書)を担う。
+description: 思いつき段階のゲーム・アプリのアイデア(フラッシュアイデア)を受け取り、競合・既出・市場性をweb調査した上で「進める価値があるか」を正直に判定し、有望なら質問を経て企画書ドラフトまで仕上げるスキル。「このアイデアどう思う」「思いつきなんだけど」「こういうゲームってアリかな」「企画書にして」「企画にできそうか調べて」「壁打ちして」「アイデア出したから調べて」等の依頼があったら必ずこのスキルを使うこと。断片的なアイデアから企画書への立ち上げが話題になった時点で参照する。完成した企画書のレビューはgame-biz-review(事業性)とgame-legal-review(権利・規約)、実装準備はgame-dev-kitが担当し、このスキルはその上流(アイデア→企画書)を担う。 | English: Use this skill whenever the user shares an early-stage game/app idea and wants it evaluated or turned into a proposal — e.g. "what do you think of this idea", "is this idea viable", "could this work as a game", "turn this into a pitch". It researches competitors/prior art on the web, gives an honest go/no-go verdict (and says clearly if the idea should be dropped), then asks questions and drafts a proposal.
 ---
 
 # game-pitch-kit: アイデアから企画書への立ち上げ
+
+## 言語 / Language
+
+この指示書は日本語で書かれているが、あらゆる言語のユーザーに適用する。**出力(質問・判定・レポート・ドラフト)は必ずユーザーの使用言語で行うこと。** 日本固有の内容(日本の法規制など)は、ユーザーの展開市場・状況に関係する場合のみ適用する。
+
+This skill's instructions are written in Japanese, but they apply to users of any language. **Always respond — questions, verdicts, reports, drafts — in the user's language.** Japan-specific content (e.g. Japanese regulations) applies only when relevant to the user's target market.
+
 
 ## このスキルの目的と、やらないこと
 
