@@ -2,9 +2,23 @@
 
 Claude Code / claude.ai / Codex で使うゲーム企画レビュー用スキル集。
 
-企画書を読ませると、「事業として成立するか」と「規約・権利的に出して大丈夫か」の2つの観点で自動レビューしてくれる。企画が固まったら、実装に入るための開発キット一式もこのリポジトリで生成できる。
+思いつき段階のアイデアは、調査と判定を経て企画書に立ち上げられる(game-pitch-kit)。できた企画書は「事業として成立するか」(game-biz-review)と「規約・権利的に出して大丈夫か」(game-legal-review)の2つの観点で自動レビュー。企画が固まったら、実装に入るための開発キット一式も生成できる(game-dev-kit)。アイデア→企画書→レビュー→実装準備まで一気通貫。
 
 会社の企画書でも、個人制作・同人・インディーの企画でも使える。企画の規模に合わせて、該当しない観点(権利元との交渉など)はスキップされる。
+
+---
+
+## 💡 game-pitch-kit — アイデアから企画書への立ち上げ
+
+思いつき段階のアイデアを投げると、競合・既出・市場性をweb調査した上で「進める価値があるか」を先に判定する。**ダメそうなら企画書を書く前にハッキリそう言う。** 有望なら、必要な質問だけを経て企画書ドラフトまで仕上げる。
+
+**わかること・作れるもの:**
+- 同じコンセプトの先行作品があるか、競合はどれくらい強いか
+- 近いジャンルの成功例・失敗例と、失敗の死因
+- 進める価値があるかの3段階判定(🟢進める/🟡条件付き/🔴止めるべき)と、その根拠
+- 判定を通ったアイデアの企画書ドラフト(自分が決めたこと/AIの仮置き/未決、が区別されたラベル付き)
+
+**呼び出し方の例:** 「このアイデアどう思う」「思いつきなんだけど」「企画にできそうか調べて」「壁打ちして」
 
 ---
 
@@ -71,6 +85,7 @@ mkdir -p ~/.claude/skills
 ln -s ~/game-review-skills/game-biz-review ~/.claude/skills/game-biz-review
 ln -s ~/game-review-skills/game-legal-review ~/.claude/skills/game-legal-review
 ln -s ~/game-review-skills/game-dev-kit ~/.claude/skills/game-dev-kit
+ln -s ~/game-review-skills/game-pitch-kit ~/.claude/skills/game-pitch-kit
 ```
 
 シンボリックリンクにしておくと、`git pull` するだけで全員が最新版を使える。
@@ -81,6 +96,7 @@ Windowsの場合は管理者権限で `mklink /D` を使う:
 mklink /D "%USERPROFILE%\.claude\skills\game-legal-review" "%USERPROFILE%\game-review-skills\game-legal-review"
 mklink /D "%USERPROFILE%\.claude\skills\game-biz-review" "%USERPROFILE%\game-review-skills\game-biz-review"
 mklink /D "%USERPROFILE%\.claude\skills\game-dev-kit" "%USERPROFILE%\game-review-skills\game-dev-kit"
+mklink /D "%USERPROFILE%\.claude\skills\game-pitch-kit" "%USERPROFILE%\game-review-skills\game-pitch-kit"
 ```
 
 ## 導入方法(Codex)
@@ -92,6 +108,7 @@ mkdir -p ~/.agents/skills
 ln -s ~/game-review-skills/game-biz-review ~/.agents/skills/game-biz-review
 ln -s ~/game-review-skills/game-legal-review ~/.agents/skills/game-legal-review
 ln -s ~/game-review-skills/game-dev-kit ~/.agents/skills/game-dev-kit
+ln -s ~/game-review-skills/game-pitch-kit ~/.agents/skills/game-pitch-kit
 ```
 
 game-legal-reviewはweb検索を前提にした設計のため、Codex側でネットワークアクセス(検索)が有効になっているか確認すること。
