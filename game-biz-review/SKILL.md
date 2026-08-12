@@ -1,6 +1,6 @@
 ---
 name: game-biz-review
-description: ゲームやアプリの企画書を「事業として成立するか」の観点でレビューするスキル。ゲームデザイン(面白さ)の批評ではなく、企画書に欠けている事業要素(数値目標、コスト構造、権利・監修、運営継続性、検証設計、市場実証)を洗い出し、追加すべき章を提案する。「企画書レビューして」「この企画どう思う」「過不足を見て」「経営に通る形にしたい」「事業性を見て」等の依頼があったら必ずこのスキルを使うこと。企画書・提案書・コンセプトドキュメントの添付や貼り付けとともに評価を求められた時点でこのスキルを参照する。 | English: Use this skill whenever the user asks to review a game/app proposal for business viability — e.g. "review my pitch", "is this viable as a business", "what's missing from this proposal". It flags missing business elements (targets, cost structure, live-ops sustainability, validation design), not game-design critique.
+description: ゲームやアプリの企画書を「事業として成立するか」の観点でレビューするスキル。ゲームデザイン(面白さ)の批評ではなく、企画書に欠けている事業要素(数値目標、コスト構造、権利・監修、運営継続性、検証設計、市場実証)を洗い出し、追加すべき章を提案する。「企画書レビューして」「この企画どう思う」「過不足を見て」「経営に通る形にしたい」「事業性を見て」等の依頼があったら必ずこのスキルを使うこと。企画書・提案書・コンセプトドキュメントの添付や貼り付けとともに評価を求められた時点でこのスキルを参照する。 | English — Use this skill whenever the user asks to review a game/app proposal for business viability — e.g. "review my pitch", "is this viable as a business", "what's missing from this proposal". It flags missing business elements (targets, cost structure, live-ops sustainability, validation design), not game-design critique.
 ---
 
 # game-biz-review: ゲーム企画書の事業レビュー

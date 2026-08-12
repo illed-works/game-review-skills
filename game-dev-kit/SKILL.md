@@ -1,6 +1,6 @@
 ---
 name: game-dev-kit
-description: 非エンジニアのゲームディレクター/プロデューサーがAIコーディング(Claude Code等)でゲームやアプリを開発するための「開発キット」(CLAUDE.md+spec.md)を生成するスキル。企画が固まってこれから実装に入る時、「CLAUDE.md作って」「spec作って」「開発準備して」「プロトタイプ作りたい」「Sonnetでも回るように仕様書を作りたい」「実装の準備をしたい」等の依頼があったら必ずこのスキルを使うこと。企画書・仕様の相談からコーディング開始への橋渡しが話題になった時点でこのスキルを参照する。 | English: Use this skill when a plan is ready for implementation and the user wants a development kit for AI coding — e.g. "create CLAUDE.md", "write the spec", "set up for implementation", "help me pick a tech stack / engine / server". Generates CLAUDE.md + spec.md tuned so non-engineers can direct AI coding tools reliably.
+description: 非エンジニアのゲームディレクター/プロデューサーがAIコーディング(Claude Code等)でゲームやアプリを開発するための「開発キット」(CLAUDE.md+spec.md)を生成するスキル。企画が固まってこれから実装に入る時、「CLAUDE.md作って」「spec作って」「開発準備して」「プロトタイプ作りたい」「Sonnetでも回るように仕様書を作りたい」「実装の準備をしたい」等の依頼があったら必ずこのスキルを使うこと。企画書・仕様の相談からコーディング開始への橋渡しが話題になった時点でこのスキルを参照する。 | English — Use this skill when a plan is ready for implementation and the user wants a development kit for AI coding — e.g. "create CLAUDE.md", "write the spec", "set up for implementation", "help me pick a tech stack / engine / server". Generates CLAUDE.md + spec.md tuned so non-engineers can direct AI coding tools reliably.
 ---
 
 # game-dev-kit: 非エンジニア向けAI開発キット生成
