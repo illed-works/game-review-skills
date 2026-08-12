@@ -11,6 +11,14 @@ description: ゲームやアプリの企画書・仕様書・シナリオを「�
 
 This skill's instructions are written in Japanese, but they apply to users of any language. **Always respond — questions, verdicts, reports, drafts — in the user's language.** Japan-specific content (e.g. Japanese regulations) applies only when relevant to the user's target market.
 
+## ドラフトモード(game-pitch-kitからの接続時)
+
+レビュー対象が game-pitch-kit の出力(項目に[決定]/[仮置き]/[未決]のラベルが付いたドラフト)の場合:
+
+- **[未決]・[仮置き]の項目を「欠落」として再指摘しない。** それらは作成時点で自覚済みのギャップであり、再列挙はノイズになる。冒頭で「未決◯件・仮置き◯件は既知として除外」と1行触れるに留める
+- レビューの焦点は、**[決定]済みの内容と企画の構造そのもの**に置く(決定内容の矛盾、構造的な不成立、[決定]なのに根拠が怪しいもの)
+- ただし、[未決]のまま進めると判定が変わる項目(例: マネタイズ未決のままでは規制リスクが評価できない)があれば、「この未決だけは先に決めるべき」として優先順位を付ける
+
 
 ## このスキルの目的と限界
 
