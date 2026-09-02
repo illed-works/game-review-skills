@@ -8,6 +8,8 @@
 - 📊 **game-biz-review** — Reviews a proposal for business viability: fuzzy goals that need real numbers, live-ops sustainability, content burn-out, exit criteria, lessons from failed games in the same genre. It is designed **not** to flatter and **not** to dress up a doomed plan.
 - ⚖️ **game-legal-review** — Reviews proposals, specs, and scenarios for platform-policy risks (Steam / App Store / Google Play), trademark collisions, game-mechanic patents, regulations (Japan + GDPR / loot-box laws / minor protection), cultural taboos, and age-rating (CERO / IARC) issues. First-pass screening only — not a substitute for a lawyer.
 - 🛠️ **game-dev-kit** — Once a plan is set, generates CLAUDE.md + spec.md so non-engineers can direct AI coding tools reliably. Includes tech-stack and server/infrastructure selection guidance when nothing is decided yet.
+- 🔒 **game-security-review** — Reviews a game before release for cheat resistance and fraud: secrets leaking into the client, missing server authority, receipt-verification gaps, replay attacks and double-granting, IDOR, rate limiting, and save-data tampering. Outputs a severity-ranked risk report plus a list of questions you can hand straight to an engineer.
+- 🧹 **sanitize-artifacts** — Strips conversation residue from generated deliverables so proposals and specs read as documents designed for their audience, not as transcripts of the prompting that produced them. Runs automatically before any deliverable is written out.
 
 The skill bodies are currently written in Japanese, but **they work in any language** — each skill is instructed to always respond in the user's language. Install them the same way as described below (clone + symlink into `~/.claude/skills/` or `~/.agents/skills/`). Japan-specific legal content is modular and only applied when your target market makes it relevant.
 
@@ -88,9 +90,40 @@ Claude Code / claude.ai / Codex で使うゲーム企画レビュー用スキル
 
 ---
 
+## 🔒 game-security-review — チート耐性・不正対策レビュー
+
+リリース前に「チートされないか」「課金アイテムを複製・水増しされないか」「クライアント側に秘密情報が漏れていないか」を点検する。ブラウザゲーム(JS/Unity WebGL)を主軸に、モバイル・Steam・Robloxも対象。
+
+**わかること:**
+
+- クライアントに出てはいけない情報(APIキー・管理URL・内部エンドポイント・.env/.git/ソースマップの公開)が露出していないか
+- サーバー権威性の欠如(クライアントの申告でアイテム付与、スコア送信、価格をクライアントから受領)
+- 課金レシートの検証漏れ、リプレイ攻撃による二重付与
+- 他人のデータを読めてしまう認可漏れ(IDOR)、レート制限、セーブデータ改ざん
+- 不正が起きたときの検知・緊急停止・回収手順が用意されているか
+- 上記を重大度付きで整理したリスクレポートと、エンジニアにそのまま投げられる質問リスト
+
+コードが読めなくても使える。ソースコード・ビルド成果物・仕様書のいずれからでも点検できる。
+
+**呼び出し方の例:** 「リリース前にチェックして」「チート対策見て」「ソースに鍵入ってない?」「課金アイテム複製できちゃう」「公開して大丈夫?」
+
+---
+
+## 🧹 sanitize-artifacts — 成果物から会話の痕跡を消す
+
+企画書やspec.mdは壁打ちを重ねて作るため、「ご指示のとおり」「前回と違い」「〜は使わない方針のため」といった制作過程の記述が本文に残りやすい。このスキルはそれを落とし、読み手に向けて初めから設計された文書として仕上げる。
+
+制約は説明文としてではなく、設計として反映する。「Gitは使わない前提です」と書くのではなく、最初からGoogleドライブを使う手順を書く。
+
+game-pitch-kit と game-dev-kit は、成果物を書き出す前にこのスキルを自動で呼ぶ。単体で「納品用に整えて」「会話の痕跡を消して」「清書して」と頼むこともできる。
+
+**呼び出し方の例:** 「納品用に整えて」「これそのまま渡せる形にして」「このまま共有して大丈夫?」
+
+---
+
 より詳しいチェック項目の一覧は **[SKILLS-OVERVIEW.md](./SKILLS-OVERVIEW.md)** を参照。
 
-両スキルは姉妹スキルとして設計されており、事業性の穴はgame-biz-review、権利・規約・表現リスクはgame-legal-reviewが担当する。
+レビュー系の3スキルは担当を分けてある。事業性はgame-biz-review、権利・規約・表現リスクはgame-legal-review、実装のチート耐性・不正対策はgame-security-reviewが見る。面白さの批評はいずれも扱わない。
 
 ## 導入方法(Claude Code)
 
@@ -102,6 +135,8 @@ ln -s ~/game-review-skills/game-biz-review ~/.claude/skills/game-biz-review
 ln -s ~/game-review-skills/game-legal-review ~/.claude/skills/game-legal-review
 ln -s ~/game-review-skills/game-dev-kit ~/.claude/skills/game-dev-kit
 ln -s ~/game-review-skills/game-pitch-kit ~/.claude/skills/game-pitch-kit
+ln -s ~/game-review-skills/game-security-review ~/.claude/skills/game-security-review
+ln -s ~/game-review-skills/sanitize-artifacts ~/.claude/skills/sanitize-artifacts
 ```
 
 シンボリックリンクにしておくと、`git pull` するだけで全員が最新版を使える。
@@ -113,6 +148,8 @@ mklink /D "%USERPROFILE%\.claude\skills\game-legal-review" "%USERPROFILE%\game-r
 mklink /D "%USERPROFILE%\.claude\skills\game-biz-review" "%USERPROFILE%\game-review-skills\game-biz-review"
 mklink /D "%USERPROFILE%\.claude\skills\game-dev-kit" "%USERPROFILE%\game-review-skills\game-dev-kit"
 mklink /D "%USERPROFILE%\.claude\skills\game-pitch-kit" "%USERPROFILE%\game-review-skills\game-pitch-kit"
+mklink /D "%USERPROFILE%\.claude\skills\game-security-review" "%USERPROFILE%\game-review-skills\game-security-review"
+mklink /D "%USERPROFILE%\.claude\skills\sanitize-artifacts" "%USERPROFILE%\game-review-skills\sanitize-artifacts"
 ```
 
 ## 導入方法(Codex)
@@ -125,6 +162,8 @@ ln -s ~/game-review-skills/game-biz-review ~/.agents/skills/game-biz-review
 ln -s ~/game-review-skills/game-legal-review ~/.agents/skills/game-legal-review
 ln -s ~/game-review-skills/game-dev-kit ~/.agents/skills/game-dev-kit
 ln -s ~/game-review-skills/game-pitch-kit ~/.agents/skills/game-pitch-kit
+ln -s ~/game-review-skills/game-security-review ~/.agents/skills/game-security-review
+ln -s ~/game-review-skills/sanitize-artifacts ~/.agents/skills/sanitize-artifacts
 ```
 
 game-legal-reviewはweb検索を前提にした設計のため、Codex側でネットワークアクセス(検索)が有効になっているか確認すること。
@@ -150,3 +189,5 @@ game-legal-reviewはweb検索を前提にした設計のため、Codex側でネ�
 MIT License. 詳細は [LICENSE](./LICENSE) を参照。
 
 改変・再配布は自由。自分の環境や制作スタイルに合わせて書き換えて使ってもらって構わない。
+
+`sanitize-artifacts` は [kotek-7/dotfiles](https://github.com/kotek-7/dotfiles) の同名スキルを元に、日本語の発火フレーズと検出対象を追記したもの。
