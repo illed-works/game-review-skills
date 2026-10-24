@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+# コミット前に文書の置き場を検査する。違反があればコミットを止める。
+# 有効化: git config core.hooksPath .githooks
+if [ -f scripts/check-docs.mjs ] && command -v node >/dev/null 2>&1; then
+  node scripts/check-docs.mjs || exit 1
+elif [ -f scripts/check-docs.sh ]; then
+  sh scripts/check-docs.sh || exit 1
+fi
